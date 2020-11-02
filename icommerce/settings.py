@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'django_filters',
 ]
 
+HASHID_FIELD_SALT = '$2o#2df3d5!tf3uaweoza552($k=m3&l=%0zpewzcpp)_v2g_h'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
