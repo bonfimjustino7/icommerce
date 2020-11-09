@@ -16,7 +16,7 @@ class PublicationSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = models.Publication
-        fields = ('id', 'url', 'name','author', 'dt_criacao', 'dt_update')
+        fields = ('id', 'url', 'name', 'url_image', 'author', 'dt_criacao', 'dt_update')
 
 
 class ProductSerialializer(serializers.HyperlinkedModelSerializer):
@@ -27,3 +27,7 @@ class ProductSerialializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Product
         fields = ('id', 'url', 'publication', 'price', 'quantity_stock')
+
+
+class GeneratePublication(serializers.Serializer):
+    url = serializers.URLField()

@@ -16,6 +16,7 @@ class GenericModel(models.Model):
 class Publication(GenericModel):
     name = models.CharField(_('Nome'), max_length=255)
     author = models.ForeignKey(User, models.CASCADE, verbose_name=(_('Autor')))
+    url_image = models.SlugField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.name
