@@ -30,7 +30,7 @@ class PublicationSerializerPOST(serializers.Serializer):
         res = OrderedDict()
         res['autor'] = data['owner']['username']
         res['image'] = data['display_resources'][0]['src'] if data['display_resources'] else None
-        res['name'] = data['edge_media_to_caption']['edges'][0]['node']['text'][:255] if data['edge_media_to_caption']['edges'] else None
+        res['name'] = data['edge_media_to_caption']['edges'][0]['node']['text'] if data['edge_media_to_caption']['edges'] else None
         res['cod_post'] = data['shortcode']
 
         return res
