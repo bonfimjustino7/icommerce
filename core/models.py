@@ -14,9 +14,10 @@ class GenericModel(models.Model):
 
 
 class Publication(GenericModel):
-    name = models.CharField(_('Nome'), max_length=255)
+    name = models.TextField(_('Nome'))
     author = models.ForeignKey(User, models.CASCADE, verbose_name=(_('Autor')))
-    url_image = models.SlugField(max_length=255, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
+    cod_post = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return self.name

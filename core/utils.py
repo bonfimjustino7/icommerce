@@ -20,3 +20,13 @@ def get_value_graph(graph: dict, key):
                         return path
 
     return None
+
+
+def clean_description(name):
+    name_clean = name.split('#')
+    if len(name_clean[0]) > 20:
+        name_clean = name_clean[0]
+    else:
+        name_clean = name
+
+    return name_clean
