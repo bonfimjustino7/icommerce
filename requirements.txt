@@ -6,3 +6,4 @@ djangorestframework==3.10.3
 Pillow
 beautifulsoup4
 requests
+django-hashid-field
