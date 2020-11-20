@@ -1,5 +1,6 @@
 import requests
 from django.conf import settings
+from django.http import HttpResponse
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
@@ -18,7 +19,5 @@ class InstagramIntegration(GenericViewSet):
         response = requests.get(serializer.validated_data.get('url'), params={
             '__a': 1
         })
-        print(response.status_code)
-        print(url_publication)
 
-        return Response(response.json())
+        return HttpResponse(response)
