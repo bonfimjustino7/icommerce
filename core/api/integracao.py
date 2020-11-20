@@ -18,5 +18,7 @@ class InstagramIntegration(GenericViewSet):
         response = requests.get(serializer.validated_data.get('url'), params={
             '__a': 1
         })
+        print(response.status_code)
+        print(url_publication)
 
         return Response(response.json())
